@@ -1,0 +1,12 @@
+<launch>
+    
+    <!-- Teleop Launch File-->
+    <include file="$(find teleop_twist_joy)/launch/teleop.launch" />
+    
+    <!-- TF Node-->
+    <node pkg="tf2_test" type="tf2_node.py" name="tf"/>
+
+    <!-- rviz Launch-->
+    <node type="rviz" name="rviz" pkg="rviz" args="-d $(find tf2_test)/tf2_test.rviz" />
+
+</launch>
